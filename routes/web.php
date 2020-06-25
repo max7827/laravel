@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login','logincontroller@login');
+
+Route::get('register','logincontroller@register');
+
+Route::get('userlist','logincontroller@userlist');
+Route::post('loginsubmit','logincontroller@loginsubmit');
+Route::post('registersubmit','logincontroller@registersubmit');
+Route::get('dashboard',function () {
+    //dd('xgf');
+    return view('home');
+});
