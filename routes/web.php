@@ -16,7 +16,7 @@ sasa
 Route::get('/', function () {
     
     return view('welcome');
-    sasa
+    sasatyu
 })
 
 Route::get('login','logincontroller@login');
