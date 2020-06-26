@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-sasa
+
 Route::get('/', function () {
     
     return view('welcome');
-    sasanmn
-})
+   
+});
 
 Route::get('login','logincontroller@login');
 
@@ -27,6 +27,6 @@ Route::get('userlist','logincontroller@userlist');
 Route::post('loginsubmit','logincontroller@loginsubmit');
 Route::post('registersubmit','logincontroller@registersubmit');
 Route::get('dashboard',function () {
-    //dd('xgf');
+    
     return view('home');
 });
