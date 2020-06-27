@@ -14,7 +14,7 @@
                 <form action="loginsubmit" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1" float="left">Email address</label>
                         <input type="email" name="email" class="form-control" value="" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>

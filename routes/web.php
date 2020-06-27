@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\logincontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
+    \Session::forget('title');
+        
     return view('welcome');
    
 });
@@ -28,6 +30,9 @@ Route::post('loginsubmit','logincontroller@loginsubmit');
 Route::post('registersubmit','logincontroller@registersubmit');
 Route::get('dashboard',function () {
     
-    return view('home');
+    return view('dashboard');
 });
+
+
+Route::post('upload','logincontroller@uploadImage');
 
