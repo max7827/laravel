@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Upload;
+
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,6 +26,13 @@ class logincontroller extends Controller
         Session::put('title','userlist');
         $res=User::all();
         return view('userlist',['data'=>$res ]);
+       
+    }
+
+    public function dashboard(){
+     
+        $res=Upload::orderBy('image_name','asc')->get();
+        return view('dashboard',['data'=>$res ]);
        
     }
     public function register(){
@@ -67,27 +76,47 @@ class logincontroller extends Controller
       
        $res = User::where('email',$req->email)->first();
        print_r($res);
-       if($res->email== $req->email){
-        session::flash('msg','email already existss');
-        return redirect()->back()->withInput();
+    //    if($res->email== $req->email){
+    //     Session::flash('msg','email already existss');
+    //     return redirect()->back()->withInput();
 
-       }else{
+    //    }else{
        $user= new User();
        $user->name=$req->name;
        $user->email=$req->email;
        $user->password=$req->password;
        $user->save();
-       session::flash('msg','user registered');
+       Session::flash('msg','user registered');
        return redirect()->back();
-       }
+       
 
     }
 
        public function uploadImage(Request $req)
-       {   //Storage::putFile(piblic/image,['image',$req->files]);
-          $path= $req->file('files')->store('images','public');
-           //return dd($req->hasFile('files'));
-           dd($path);
-            return 'uploaded';
+       {
+
+
+
+
+        if ($req->hasFile('files') == false) {
+            return redirect()->back()->with(Session::flash('err', 'choosefile'));
+        }
+        $filename = $req->file('files')->getClientOriginalName();
+        $up=new Upload();
+        $up->image_name=$filename;
+        $up->save();
+        
+        //$path = $req->file('files')->storeAs($filename, 'public');
+        $path = $req->file('files')->move('images',$filename);
+        
+        if ($path) {
+            return redirect()->back()->with(Session::flash('msg', 'file uploaded'));
+                                     
+            
+        } else {
+            return redirect()->back()->with(Session::flash('err', 'file not uploaded'));
+        }
+
+            
        } 
 }
