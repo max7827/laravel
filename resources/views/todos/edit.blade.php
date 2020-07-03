@@ -10,11 +10,7 @@
 
                 
 
-                @if($errors->any())
-                @foreach($errors->all() as $error)
-                <p class="alert-danger">{{$error}}</p>
-                @endforeach
-                @endif
+               
 
                 @if(Session::has('msg'))
 

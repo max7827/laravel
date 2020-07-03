@@ -9,14 +9,22 @@
             <div class="card-body">
                 @if(Session::has('msg'))
 
-                <p class="alert-danger">{{Session::get('msg')}}</p>
+                <p class="alert-success">{{Session::get('msg')}}</p>
 
                 @endif
+
+
+                @if(Session::has('err'))
+
+                <p class="alert-danger">{{Session::get('err')}}</p>
+
+                @endif
+
                 <form action="registersubmit" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">name</label>
-                        <input type="name" name="name" value="{{old('name')}}"  class="form-control" id="name">
+                        <input type="name" name="name" value="{{old('name')}}" class="form-control" id="name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
