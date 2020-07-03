@@ -30,13 +30,19 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register">Register</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userlist">UserList</a>
+                        <a class="nav-link" href="/userlist">UserList</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/todos">Todos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/todos/gofile">Gofile</a>
                     </li>
                    
                 </ul>
