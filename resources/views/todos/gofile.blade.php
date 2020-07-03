@@ -11,11 +11,7 @@
                 
 
 
-                @if(Session::has('msg'))
-
-                <p class="alert-success">{{Session::get('msg')}}</p>
-
-                @endif
+             
 
 
                 @if(Session::has('err'))
@@ -28,7 +24,9 @@
                     @csrf
                     <div class="form-group">
                         
-                      <p>  <input type="file"  name="files" class="form-control" id="name">
+                     
+                       
+                        <p>  <input type="file"  name="files" class="form-control" id="name">
                       <br>
                         <button type="submit" class="btn btn-primary">Upload</button>
                       </p>

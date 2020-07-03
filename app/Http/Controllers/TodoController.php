@@ -176,4 +176,24 @@ class TodoController extends Controller
     \Session::flash('msg','file uploaded');
        return view('todos.gofile2',['url'=>$url]);
     }   
+
+        public function gofilesubmit1(Request $req)
+        {
+
+            //dd($req);
+            //foreach($req as $q)
+            
+            $a[]=$req->name;
+           
+            // $a[]=$req->name2;
+            // $a[]=$req->name3;
+            // $a[]=$req->name4;
+            dd($a);
+            
+            // for ($i=1;$i<4;$i++){
+            // $a[]=$req->"name".$i;
+            //  dd($a);
+            //    }
+         }
+
 }
