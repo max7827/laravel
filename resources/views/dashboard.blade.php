@@ -47,7 +47,10 @@
                 <tr>
                     <th scope="row">{{$sr++}}</th>
                     <td>{{$d->image_name}}</td>
-                    <td><img src="images/{{$d->image_name}}" width="100px"></td>
+                    <td>
+                        <img src="images/{{$d->image_name}}" width="100px">
+                        <a href="images/{{$d->image_name}}" >Download</a>
+                   </td>
                    
                 </tr>
         @endforeach
