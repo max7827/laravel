@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\loginRequest;
 use Illuminate\Http\Request;
 use App\User;
 use App\Upload;
 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class logincontroller extends Controller
 {   
@@ -43,14 +45,22 @@ class logincontroller extends Controller
         return view('register');
     }
 
-    public function loginsubmit(Request $req){
+    public function loginsubmit(loginRequest $req){
+       
+        // $req->validate([
+        //     'email'=>'required|max:255',
+        //     'password'=>'required | min:3'
+        // ]);
         
-       $res = User::where('email',$req->email)->first();
-     
+        $res = User::where('email',$req->email)->first();
+       //dd($res->isEmpty());
+       // dd($res['password']);
+     //  dd(User::where('email',$req->email)->pluck('password'));
        //$res2 = User::where('password',$req->password)->get();
        if(!isset($res) || $res == null)
-       {   
-           Session::flash('msg','No User Found with this email');
+       {  
+       
+           Session::flash('err','No User Found with this email');
            return redirect()->back();
        }
           // dd($res);
@@ -60,6 +70,10 @@ class logincontroller extends Controller
        // return view('dashboard',['title'=>$title]);
         return redirect('dashboard');
 
+
+       }else{
+        Session::flash('err','password incorrect');
+        return redirect()->back();
 
        }
       
