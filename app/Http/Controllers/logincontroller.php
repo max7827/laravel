@@ -86,15 +86,20 @@ class logincontroller extends Controller
         
     }
 
-    public function registersubmit(Request $req){
-      
+    public function registersubmit(loginRequest $req){
+        //$res1 = User::all();
        $res = User::where('email',$req->email)->first();
       // print_r($res);
-       if($res->email== $req->email){
-        Session::flash('err','email already existss');
-        return redirect()->back()->withInput();
+     // dd($res->email);
+     if($res){
 
-       }
+     
+        if($res->email== $req->email){
+         Session::flash('err','email already exists');
+         return redirect()->back()->withInput();
+          }
+        }
+       
        $user= new User();
        $user->name=$req->name;
        $user->email=$req->email;

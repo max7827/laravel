@@ -24,7 +24,8 @@ class loginRequest extends FormRequest
     public function rules()
     {  //dd('jjj');
         return ['email'=>'required|email',
-                'password'=>'required|min:3'
+                'password'=>'required|min:3',
+                'name'=>'required|max:255'
     ];
             //
     
@@ -37,6 +38,8 @@ class loginRequest extends FormRequest
         return [
             'email.required'=>'email required',
             'email.email'=>'email can be only email',
+            'name.required'=>'name required',
+            'name.max'=>'name can cannot be more than 255 characters',
             'password.required'=>'Password cannot be empty',
             'password.min'=>'Password must be of min 3 characters'
         ];

@@ -107,13 +107,14 @@ class TodoController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-        //echo $response;
+      
+        if($response){
         $q = json_decode($response);
         foreach ($q as $s) {
         }
         $server = $s->server;
 
-  
+        
       
 
         //$path = $req->file('files');
@@ -132,19 +133,22 @@ class TodoController extends Controller
             CURLOPT_POSTFIELDS => array('filesUploaded'=> new \CURLFILE($tmp,$ext,$filename)),
         ));
 
-        $response = curl_exec($curl);
-
+        $response2 = curl_exec($curl);
+      
         curl_close($curl);
-        echo $response;
-
+        //echo $response2;
+       
 
       
-        if($response){
-        //dd($response);
-        $q = json_decode($response);
+       
+        //dd($response2);
+        $q = json_decode($response2);
+        if($q->status=="ok"){
+       // dd($q->status);
         foreach ($q as $s) {
         }
          $code = $s->code;
+         //dd($s->data);
        
         $s=array(
            'filename'=>$filename =$req->file('files')->getClientOriginalName(),
@@ -161,7 +165,7 @@ class TodoController extends Controller
        // return redirect('')->back()->with('msg',"file uploaded");
 
         }
-        
+    }
             return redirect()->back()->with('err','file not uploaded');
         
     }
