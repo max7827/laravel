@@ -148,7 +148,7 @@ class TodoController extends Controller
         foreach ($q as $s) {
         }
          $code = $s->code;
-         //dd($s->data);
+         //dd($q);
        
         $s=array(
            'filename'=>$filename =$req->file('files')->getClientOriginalName(),
@@ -157,10 +157,10 @@ class TodoController extends Controller
             'code'=>$code,
             'server'=>$server);
           
-         
-            
+         //dd($s);            
           //$this->gofiledownload($this->code,$this->server);
           \Session::put('data',$s);
+          //dd('data');
         return redirect('/todos/gofiledownload/'.$code);
        // return redirect('')->back()->with('msg',"file uploaded");
 

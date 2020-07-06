@@ -43,5 +43,5 @@ Route::get('/todos/create','TodoController@create');
 Route::post('/todos/create','TodoController@store');
 Route::post('/todos/gofile','TodoController@gofilesubmit');
 Route::get('/todos/gofile','TodoController@gofileload');
-Route::post('/todos/gofiledownload/{code?}/','TodoController@gofiledownload')->name('todos');
+Route::get('/todos/gofiledownload/{code?}/','TodoController@gofiledownload')->name('todos');
 
