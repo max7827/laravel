@@ -14,7 +14,7 @@ class AddExtnAfterFilename extends Migration
     public function up()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            $table->string('extn')->after('file_name');
+            $table->string('extn')->after('file_name')->nullable();
         });
     }
 

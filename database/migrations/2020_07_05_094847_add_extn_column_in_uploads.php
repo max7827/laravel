@@ -14,7 +14,7 @@ class AddExtnColumnInUploads extends Migration
     public function up()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            //
+            $table->string('extn')->after('file_name')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddExtnColumnInUploads extends Migration
     public function down()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            //
+            $table->dropColumn('extn');
         });
     }
 }

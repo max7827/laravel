@@ -14,7 +14,7 @@ class AddMimeTypeAfterExtnUploads extends Migration
     public function up()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            $table->dropColumn('mime_type');
+            $table->string('mime_type')->after('extn')->nullable();
         });
     }
 
