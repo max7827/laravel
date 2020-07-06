@@ -32,7 +32,8 @@ Route::post('registersubmit','logincontroller@registersubmit');
 Route::get('dashboard','logincontroller@dashboard');
 
 
-Route::post('upload','logincontroller@uploadImage');
+Route::post('upload','logincontroller@uploadFile');
+Route::get('/download/{file_name}','logincontroller@downloadFile');
 
 Route::get('/todos','TodoController@index');
 Route::get('/todos/{id}/edit','TodoController@edit');
@@ -42,5 +43,5 @@ Route::get('/todos/create','TodoController@create');
 Route::post('/todos/create','TodoController@store');
 Route::post('/todos/gofile','TodoController@gofilesubmit');
 Route::get('/todos/gofile','TodoController@gofileload');
-Route::get('/todos/gofiledownload/{code?}/','TodoController@gofiledownload')->name('todos');
+Route::post('/todos/gofiledownload/{code?}/','TodoController@gofiledownload')->name('todos');
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUploadsTable extends Migration
+class AddedMimetypeColumnInUplaods extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateUploadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('uploads', function (Blueprint $table) {
-            $table->id();
-            $table->string('image')->nullable();
-            $table->string('ext')->nullable();
-            $table->timestamps();
+        Schema::table('uploads', function (Blueprint $table) {
+        //   $table->string('mime_type');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uploads');
+        Schema::table('uploads', function (Blueprint $table) {
+            // $table->dropColumn('mime_type');
+        });
     }
 }

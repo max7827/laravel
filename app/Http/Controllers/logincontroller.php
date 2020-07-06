@@ -33,7 +33,7 @@ class logincontroller extends Controller
 
     public function dashboard(){
      
-        $res=Upload::orderBy('image_name','asc')->get();
+        $res=Upload::orderBy('file_name','asc')->get();
         return view('dashboard',['data'=>$res ]);
        
     }
@@ -106,22 +106,27 @@ class logincontroller extends Controller
 
     }
 
-       public function uploadImage(Request $req)
+       public function uploadFile(Request $req)
        {
-
-
-
-
-        if ($req->hasFile('files') == false) {
-            return redirect()->back()->with(Session::flash('err', 'choosefile'));
-        }
-        $filename = $req->file('files')->getClientOriginalName();
+        
+           
+           
+           if ($req->hasFile('files') == false) {
+               return redirect()->back()->with(Session::flash('err', 'choosefile'));
+            }
+            $filename = $req->file('files')->getClientOriginalName();
+            
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+           // dd($ext);
+        //$ext = $req->file('files')->extension();
         $up=new Upload();
-        $up->image_name=$filename;
+        $up->file_name=$filename;
+        $up->extn=$ext;
+        $up->mime_type=$req->file('files')->extension();
         $up->save();
         
         //$path = $req->file('files')->storeAs($filename, 'public');
-        $path = $req->file('files')->move('images',$filename);
+        $path = $req->file('files')->move('file',$filename);
         
         if ($path) {
             return redirect()->back()->with(Session::flash('msg', 'file uploaded'));
@@ -133,4 +138,11 @@ class logincontroller extends Controller
 
             
        } 
+
+
+       public function downloadFile($file_name)
+       {  //dd($image_name);
+          return response()->download(public_path().'/files/'.$file_name);
+       }
 }
+
