@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createRequest;
 use App\Http\Requests\loginRequest;
 use Illuminate\Http\Request;
 use App\User;
@@ -45,16 +46,20 @@ class logincontroller extends Controller
         return view('register');
     }
 
+    public function loginsubmit1(loginRequest $req){
+        dd($req);
+    }
+
     public function loginsubmit(loginRequest $req){
        
         // $req->validate([
         //     'email'=>'required|max:255',
         //     'password'=>'required | min:3'
         // ]);
-        
+        //dd($req);
         $res = User::where('email',$req->email)->first();
        //dd($res->isEmpty());
-       // dd($res['password']);
+        //dd($res['password']);
      //  dd(User::where('email',$req->email)->pluck('password'));
        //$res2 = User::where('password',$req->password)->get();
        if(!isset($res) || $res == null)
@@ -63,7 +68,7 @@ class logincontroller extends Controller
            Session::flash('err','No User Found with this email');
            return redirect()->back();
        }
-          dd($res);
+          
       if($req->password==$res['password'] ) {
        // Session::put('title',$title);
       // $title=User::all();
@@ -86,7 +91,7 @@ class logincontroller extends Controller
         
     }
 
-    public function registersubmit(loginRequest $req){
+    public function registersubmit(createRequest $req){
         //$res1 = User::all();
        $res = User::where('email',$req->email)->first();
       // print_r($res);

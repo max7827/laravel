@@ -7,6 +7,7 @@ use App\Todo;
 use Faker\Provider\Lorem;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\TodoCreateRequest;
+use Illuminate\Support\Facades\Session;
 
 class TodoController extends Controller
 {   
@@ -159,7 +160,7 @@ class TodoController extends Controller
           
          //dd($s);            
           //$this->gofiledownload($this->code,$this->server);
-          \Session::put('data',$s);
+          Session::put('data',$s);
           //dd('data');
         return redirect('/todos/gofiledownload/'.$code);
        // return redirect('')->back()->with('msg',"file uploaded");
@@ -171,13 +172,13 @@ class TodoController extends Controller
     }
 
     public function gofiledownload($code)
-    {    $data=\Session::get('data');
+    {    $data=Session::get('data');
        // dd($data);
       $url="https://gofile.io/d/".$data['code'];
       //dd($url);
     //   $downloadUrl="https://".$data['server'].".gofile.io/download/".$data['code']."/".$data['filename'];
     //   dd($downloadUrl);
-    \Session::flash('msg','file uploaded');
+    Session::flash('msg','file uploaded');
        return view('todos.gofile2',['url'=>$url]);
     }   
 

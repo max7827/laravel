@@ -15,7 +15,7 @@
 
               
 
-                <form action="loginsubmit" method="POST">
+                <form action="/loginsubmit" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" float="left">Email address</label>
@@ -33,9 +33,10 @@
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>    
+                </form>   
+
             </div>
         </div>
     </div>
-
+</div>
     @endsection
