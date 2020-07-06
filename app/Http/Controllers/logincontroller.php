@@ -63,7 +63,7 @@ class logincontroller extends Controller
            Session::flash('err','No User Found with this email');
            return redirect()->back();
        }
-          // dd($res);
+          dd($res);
       if($req->password==$res['password'] ) {
        // Session::put('title',$title);
       // $title=User::all();
@@ -131,7 +131,7 @@ class logincontroller extends Controller
         $up->save();
         
         //$path = $req->file('files')->storeAs($filename, 'public');
-        $path = $req->file('files')->move('file',$filename);
+        $path = $req->file('files')->move('files',$filename);
         
         if ($path) {
             return redirect()->back()->with(Session::flash('msg', 'file uploaded'));
