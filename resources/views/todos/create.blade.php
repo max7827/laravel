@@ -33,9 +33,10 @@
                     <div class="form-group">
                         
                       <p>  <input type="text" placeholder="Enter Tile" name="title" class="form-control" id="name">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                      <br><button type="submit" class="btn btn-primary">Create</button>
                       </p>
                     </div>
+                    <br>
                     <a href="/todos" class="btn btn-primary">back</class=></a>
 
 

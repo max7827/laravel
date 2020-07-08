@@ -1,16 +1,17 @@
 @extends('layout')
 
 @section('content')
-
+<br>
 <h1>Whats TO DO</h1>
+<br>
 <div class="row">
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
 
-                
 
-               
+
+
 
                 @if(Session::has('msg'))
 
@@ -27,28 +28,48 @@
 
 
                 @foreach($data as $d)
+                @endforeach
 
-               
                 <form action="{{'/todos/'.$d->id.'/edit'}}" method="post">
-                @method('patch')   
-                @csrf
+                    @method('patch')
+                    @csrf
                     <div class="form-group">
-                   
-                      <p>  <input type="text" value="{{$d->title}}" name="title" class="form-control" id="name">
-                        @endforeach
-                      <button type="submit" class="btn btn-primary">Update</button>
-                      </p>
+
+                        <p> <input type="text" value="{{$d->title}}" name="title" class="form-control" id="name">
+
+
+                            @if($d->completed==1)
+
+                             <input type="checkbox" name="check" id="checked" value="{{$d->completed}}" checked>
+                             <label for="checked">Completed</label>
+                             
+
+                            @endif
+
+
+                            @if($d->completed==0)
+                       
+                            <br> <input type="checkbox" name="check" id="unchecked" value="{{$d->completed}}" >
+                            <label for="checked">Completed</label>
+
+                            @endif
+                           
+                            <br>
+                        </p>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Update</button>
+
                     </div>
-                    <a href="/todos" class="btn btn-primary">back</class=></a>
+                  
 
 
-                    
+
                 </form>
 
-             
+
             </div>
         </div>
     </div>
 </div>
 
-    @endsection
+@endsection

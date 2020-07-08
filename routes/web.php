@@ -37,6 +37,7 @@ Route::get('/download/{file_name}','logincontroller@downloadFile');
 
 Route::get('/todos','TodoController@index');
 Route::get('/todos/{id}/edit','TodoController@edit');
+Route::get('/todos/{id}/completed','TodoController@completed')->name('completed');
 Route::get('/todos/{id}/delete','TodoController@delete');
 Route::patch('/todos/{id}/edit','TodoController@updateTodo'); //->name('todos.edit');
 Route::get('/todos/create','TodoController@create');

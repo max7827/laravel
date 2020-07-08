@@ -125,7 +125,8 @@ class logincontroller extends Controller
                return redirect()->back()->with(Session::flash('err', 'choosefile'));
             }
             $filename = $req->file('files')->getClientOriginalName();
-            
+            //$e = $req->file('files')->getPathname();
+            //dd($e);
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
            // dd($ext);
         //$ext = $req->file('files')->extension();

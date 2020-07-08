@@ -15,7 +15,7 @@ class TodoController extends Controller
    
     public function index()
     {
-        $data = Todo::orderBy('created_at', 'desc')->get();
+        $data = Todo::orderBy('completed', 'asc')->orderBy('title', 'asc')->get();
         return view('todos.index', ['data' => $data]);
         //  or  return view('todos.index',compact('data'));
     }
@@ -24,10 +24,17 @@ class TodoController extends Controller
 
     public function updateTodo($id, TodoCreateRequest $req)
     {
-
-        $s = Todo::find($id)->update(['title' => $req->title]);
-
-        return redirect()->back()->with('msg', "todo updated");
+       // dd($req);
+    //    $a=isset($req->check);
+    //    dd($a);
+        if(isset($req->check)== false){
+            //dd();
+        Todo::find($id)->update(['title' => $req->title,'completed'=>false]);
+        //dd($s);
+    }else{
+            Todo::find($id)->update(['title' => $req->title,'completed'=>true]);
+        }
+        return redirect('/todos');
     }
 
     public function edit($id)
@@ -45,6 +52,18 @@ class TodoController extends Controller
         //dd($data); 
         return redirect()->back();
         //  or  return view('todos.index',compact('data'));
+    }
+
+    public function completed($id,Request $req)
+    {
+     //dd('dw');
+    //    $a=isset($req->check);
+    //    dd($a);
+       
+            //dd();
+        Todo::find($id)->update(['completed'=>true]);
+        //dd($s);
+        return redirect()->back();
     }
 
     public function create()
