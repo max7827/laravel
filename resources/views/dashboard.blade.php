@@ -723,8 +723,13 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
+              <div class="image">
+          <img src="dist/img/user2-160x160.jpg" width="160px" class="img-circle elevation-2" alt="User Image">
+        </div>
             </ol>
           </div><!-- /.col -->
+
+          
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
