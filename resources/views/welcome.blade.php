@@ -3,7 +3,8 @@
 @section('content')
             <div class="content">
                 <div class="title m-b-md">
-                    billi
+               <img src="/files/logo.jpeg" class="rounded mx-auto d-block"  width="200">
+                A​p​e​x​ ​I​n​f​o​t​e​c​h​
                 </div>
 
                 <div class="links">
