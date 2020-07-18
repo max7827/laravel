@@ -35,11 +35,11 @@
         Home
       </a>
 
-      <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+      <a href="/login1" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         Login
       </a>
       
-      <a href="/register" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+      <a href="/register1" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         register
       </a>
       <a href="/userlist" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
@@ -51,6 +51,14 @@
 
       <a href="/todos/gofile" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         gofile
+      </a>
+
+      <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        LoginAuth
+      </a>
+      
+      <a href="/register" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        RegisterAuth
       </a>
                  </div>
             </div>

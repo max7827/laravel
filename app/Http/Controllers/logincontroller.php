@@ -25,16 +25,16 @@ class logincontroller extends Controller
     }
 
     public function userlist(){
-        Session::forget('title');
-        Session::put('title','userlist');
-        $res=User::all();
+        
+     
+        $res=User::latest()->get();
         return view('userlist',['data'=>$res ]);
        
     }
 
     public function dashboard(){
      
-        $res=Upload::orderBy('file_name','asc')->get();
+        $res=Upload::latest()->get();
         return view('dashboard',['data'=>$res ]);
        
     }

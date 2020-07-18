@@ -22,9 +22,11 @@ Route::get('/', function () {
    
 });
 
-Route::get('login','logincontroller@login');
 
-Route::get('register','logincontroller@register');
+
+Route::get('login1','logincontroller@login');
+
+Route::get('register1','logincontroller@register');
 
 Route::get('userlist','logincontroller@userlist');
 Route::post('loginsubmit','logincontroller@loginsubmit');
@@ -45,4 +47,10 @@ Route::post('/todos/create','TodoController@store');
 Route::post('/todos/gofile','TodoController@gofilesubmit');
 Route::get('/todos/gofile','TodoController@gofileload');
 Route::get('/todos/gofiledownload/{code?}/','TodoController@gofiledownload')->name('todos');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 

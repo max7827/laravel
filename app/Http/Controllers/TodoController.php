@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//use App\Http\Middleware\Cat as middleware;
 use Illuminate\Http\Request;
 use App\Todo;
 use Faker\Provider\Lorem;
@@ -11,7 +12,10 @@ use Illuminate\Support\Facades\Session;
 
 class TodoController extends Controller
 {   
-
+     public function __construct()
+     {
+         $this->middleware('at');
+     }
    
     public function index()
     {
