@@ -724,9 +724,9 @@
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
               
- <div class="col-sm-6">
+ 
             <h1 class="m-0 text-dark">Juhi Yadav</h1>
-          </div>
+          
               <div class="image">
  
                 
