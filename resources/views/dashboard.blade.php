@@ -774,7 +774,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>Rs.230</h3>
+                <h3>Rs.350</h3>
 
                 <p>Total Earnings</p>
               </div>
