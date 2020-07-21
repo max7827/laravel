@@ -891,7 +891,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>7</h3>
+                  <h3>8</h3>
 
                   <p>
                     New worksheets
@@ -908,7 +908,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>5<sup style="font-size: 20px"></sup></h3>
+                  <h3>7<sup style="font-size: 20px"></sup></h3>
 
                   <p>
                     Completed Worksheets
@@ -925,7 +925,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>Rs.950</h3>
+                  <h3>Rs.1400</h3>
 
                   <p>
                     Total Earnings
@@ -942,7 +942,7 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>103</h3>
+                  <h3>113</h3>
 
                   <p>
                     Total changes
