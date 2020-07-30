@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+ 
   <!-- JQVMap -->
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
@@ -380,12 +381,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/UI/modals.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>
                       Modals & Alerts
                     </p>
                   </a>
+                  <a href="pages/UI/modals.html" class="nav-link">
                 </li>
                 <li class="nav-item">
                   <a href="pages/UI/navbar.html" class="nav-link">
@@ -718,7 +719,7 @@
                 </li>
                 <li class="nav-item">
                   <a href="starter.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>is 
                     <p>
                       Starter Page
                     </p>
@@ -925,7 +926,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>Rs.3210</h3>
+                  <h3>Rs.4300</h3>
 
                   <p>
                     Total Earnings
