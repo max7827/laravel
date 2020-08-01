@@ -926,7 +926,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>Rs.4800</h3>
+                  <h3>Rs.5400</h3>
 
                   <p>
                     Total Earnings
